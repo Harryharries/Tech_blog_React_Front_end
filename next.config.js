@@ -1,7 +1,7 @@
 /*
  * @Author: harry
  * @Date: 2020-09-16 16:23:43
- * @LastEditTime: 2020-09-16 17:00:56
+ * @LastEditTime: 2020-09-16 17:42:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog/next.config.js
@@ -12,4 +12,6 @@ if(typeof require !== 'undefined'){
     require.extensions['.css']=file=>{}
 }
 
-module.exports = withCss({})
+module.exports = {
+    //withCss({})
+}
