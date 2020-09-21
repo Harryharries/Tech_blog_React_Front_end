@@ -1,7 +1,7 @@
 /*
  * @Author: Harry
  * @Date: 1985-10-26 03:15:00
- * @LastEditTime: 2020-09-21 10:14:56
+ * @LastEditTime: 2020-09-21 11:23:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog/pages/index.js
@@ -9,7 +9,7 @@
 import Head from 'next/head'
 import React,{useState} from 'react'
 // import Link from 'next/link'
-import {Row,Col,List,Icon} from 'antd'
+import {Row,Col,List,Icon,Breadcrumb} from 'antd'
 import Header from '../components/Header'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
@@ -17,7 +17,7 @@ import Footer from '../components/Footer'
 
 // import List from './list'
 
-export default function Home() {
+export default function MyList() {
 
   const [mylist,setMylist] = useState(
       [
@@ -36,6 +36,14 @@ export default function Home() {
       <Header/>
       <Row className = "comm-main" type="flex" justify="center">
           <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}>
+
+            <div className="bread-div">
+              <Breadcrumb>
+              <Breadcrumb.Item><a href="/">home</a></Breadcrumb.Item>
+              <Breadcrumb.Item><a href="/list">blog</a></Breadcrumb.Item>
+              </Breadcrumb>
+            </div>
+
             <List
               header={<div>recent blog</div>}
               itemLayout="vertical"
@@ -44,9 +52,9 @@ export default function Home() {
                 <List.Item>
                   <div className="list-title">{item.title}</div>
                   <div className="list-icon">
-                    <span><Icon type="calender">2020-06-28</Icon></span>
-                    <span><Icon type="folder">vedio</Icon></span>
-                    <span><Icon type="fire">59</Icon></span>
+                    <span><Icon type="calendar"/>2020-06-28</span>
+                    <span><Icon type="folder"/>text</span>
+                    <span><Icon type="fire"/>59</span>
                   </div>
                   <div>{item.context}</div>
                 </List.Item>
